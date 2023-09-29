@@ -3,13 +3,13 @@
 </script>
 
 <div class="flex flex-col md:flex-row w-full justify-center gap-2">
-    <div class="flex flex-row md:flex-col gap-2">
-        <Avatar class="w-12 -ml-2 md:-ml-0" />
+    <div class="w-full md:w-auto flex flex-row md:flex-col gap-2 max-w-[640px] mx-auto md:mx-0">
+        <Avatar class="w-12" />
         <div class="ml-1 md:hidden flex justify-center flex-col">
             <strong class="text-lg">Username</strong>
         </div>
     </div>
-    <div class="max-w-[640px] -ml-2 md:-ml-0 flex-1">
+    <div class="w-full max-w-[640px] flex-1 mx-auto md:mx-0">
         <strong class="text-lg ml-1 hidden md:inline-block">Username</strong>
         <div class="card p-4 mx-auto w-full rounded-tl-none md:mt-2 flex flex-col">
             <section>
