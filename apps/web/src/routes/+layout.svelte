@@ -22,9 +22,9 @@
 <Drawer>
 	<Navigation />
 </Drawer>
-<AppShell slotHeader="lg:hidden" slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64" slotSidebarRight="hidden xl:flex flex-col w-[600px] p-6">
+<AppShell slotHeader="lg:hidden" slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64 card rounded-none" slotSidebarRight="hidden xl:flex flex-col w-2/5 p-6">
 	<svelte:fragment slot="header">
-		<AppBar>
+		<AppBar class="card rounded-none">
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
 					<button on:click={drawerOpen} class="btn btn-sm mr-4">
@@ -38,6 +38,9 @@
 					</button>
 				</div>
 			</svelte:fragment>
+			<svelte:fragment slot="trail">
+				<a href="/post" class="btn bg-primary-600 text-white">New post</a>
+			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
@@ -49,7 +52,9 @@
 	<!-- page header -->
 
 	<!-- Router Slot -->
-	<slot />
+	<div class="flex flex-col p-5 lg:pr-0">
+		<slot />
+	</div>
 	<!-- ---- / ---- -->
 	<!-- (page footer) -->
 	<!-- (footer) -->
