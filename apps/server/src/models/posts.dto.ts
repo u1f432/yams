@@ -1,6 +1,7 @@
 import { IsNotEmpty, IsString, IsBoolean, ValidateIf, IsOptional, Length } from "class-validator"
+import { GetAccountDto } from "./accounts.dto"
 
-export class CreatePostDto {
+export class BasePostDto {
     @IsNotEmpty()
     @IsString()
     @Length(1, 2048)
@@ -17,7 +18,13 @@ export class CreatePostDto {
     spoiler_text?: string
 }
 
-export class GetPostDto extends CreatePostDto {
+export class CreatePostDto extends BasePostDto {
+    @IsString()
+    account_uuid?: string
+}
+
+export class GetPostDto extends BasePostDto {
     uuid: string
     created: Date
+    account: GetAccountDto
 }
