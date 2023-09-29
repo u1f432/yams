@@ -1,8 +1,6 @@
-<script lang="ts">
-	import CreatePost from "$lib/post/CreatePost.svelte"
-
-</script>
-
-<div class="flex flex-col w-full p-6 xl:hidden">
-	<CreatePost />
+<div class="card p-5">
+	<section>
+		<p>Timeline goes here.</p>
+		<p>Show signup/login page if not logged in</p>
+	</section>
 </div>
