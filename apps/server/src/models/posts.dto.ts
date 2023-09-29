@@ -1,8 +1,9 @@
-import { IsNotEmpty, IsString, IsBoolean, IsOptional } from "class-validator"
+import { IsNotEmpty, IsString, IsBoolean, ValidateIf, IsOptional, Length } from "class-validator"
 
 export class CreatePostDto {
     @IsNotEmpty()
     @IsString()
+    @Length(1, 2048)
     text: string
 
     @IsNotEmpty()
@@ -10,7 +11,9 @@ export class CreatePostDto {
     sensitive: boolean
 
     @IsString()
+    @ValidateIf(o => o.sensitive)
     @IsOptional()
+    @Length(1, 128)
     spoiler_text?: string
 }
 
