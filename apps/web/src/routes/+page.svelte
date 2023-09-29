@@ -3,6 +3,6 @@
 
 </script>
 
-<div class="flex flex-col w-full p-6 md:hidden">
+<div class="flex flex-col w-full p-6 xl:hidden">
 	<CreatePost />
 </div>

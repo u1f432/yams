@@ -22,12 +22,12 @@
 <Drawer>
 	<Navigation />
 </Drawer>
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64" slotSidebarRight="hidden md:flex flex-col w-[400px] lg:w-[460px] p-6">
+<AppShell slotHeader="lg:hidden" slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64" slotSidebarRight="hidden xl:flex flex-col w-[600px] p-6">
 	<svelte:fragment slot="header">
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
-					<button on:click={drawerOpen} class="lg:hidden btn btn-sm mr-4">
+					<button on:click={drawerOpen} class="btn btn-sm mr-4">
 						<span>
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
@@ -36,7 +36,6 @@
 							</svg>
 						</span>
 					</button>
-					<strong class="text-xl uppercase text-primary-500">YAMS</strong>
 				</div>
 			</svelte:fragment>
 		</AppBar>
