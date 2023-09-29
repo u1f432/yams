@@ -11,7 +11,7 @@ export class PostsController {
     return this.postsService.findAll()
   }
 
-  @Post("create")
+  @Post()
   createPost(@Body() data: CreatePostDto): GetPostDto {
     return this.postsService.create(data)
   }
