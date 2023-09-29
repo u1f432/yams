@@ -1,2 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import CreatePost from "$lib/post/CreatePost.svelte"
+
+</script>
+
+<div class="flex flex-col w-full p-6 md:hidden">
+	<CreatePost />
+</div>
