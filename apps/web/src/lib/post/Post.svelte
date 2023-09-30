@@ -10,8 +10,8 @@
 
 <div class="flex flex-col w-full justify-center gap-2">
     <div class="w-full flex flex-row gap-2 max-w-[640px] mx-auto">
-        <Avatar class="w-10" />
-        <div class="ml-1 flex flex-1 items-center">
+        <Avatar class="w-10 h-min" />
+        <div class="ml-1 flex flex-1 items-center flex-wrap">
             <strong class="text-lg h-min">
                 {#if post.account.display_name}
                     {post.account.display_name}
@@ -24,7 +24,7 @@
                     @{post.account.username}
                 </span>
             {/if}
-            <span class="inline-block ml-auto" style="opacity: 0.5;">{created}</span>
+            <span class="inline-block ml-auto w-full md:w-auto" style="opacity: 0.5;">{created}</span>
         </div>
     </div>
     <div class="w-full max-w-[640px] flex-1 mx-auto">
