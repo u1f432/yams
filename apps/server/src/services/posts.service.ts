@@ -39,7 +39,7 @@ export class PostsService {
       uuid, created, account
     }}
 
-    posts.push(createdPost)
+    posts.unshift(createdPost)
     return createdPost
   }
 }
