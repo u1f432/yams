@@ -24,18 +24,21 @@ export default async function api<T>(fetch: (input: RequestInfo | URL, init?: Re
     let headers = new Headers()
     if (options?.body) headers.append("Content-Type", "application/json")
 
+    let resp: any
     try {
-        const resp = await fetch(endpoint, {
+        resp = await fetch(endpoint, {
             method: method,
             body: options?.body ? JSON.stringify(options.body) : null,
             headers: headers
         })
-
-        const json = await resp.json()
-        // @ts-ignore
-        if (!resp.ok) throw error(resp.status, ({ message: resp.statusText, body: json }))
-        return json
     } catch (e: any) {
-        throw error(500, { message: e.message})
+        throw error(500, ({
+            message: e.message
+        }))
     }
+
+    const json = await resp.json()
+    // @ts-ignore
+    if (!resp.ok) throw error(resp.status, ({ message: resp.statusText, body: json }))
+    return json
 }
