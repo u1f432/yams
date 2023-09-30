@@ -12,7 +12,18 @@
     <div class="w-full flex flex-row gap-2 max-w-[640px] mx-auto">
         <Avatar class="w-10" />
         <div class="ml-1 flex flex-1 items-center">
-            <strong class="text-lg h-min">@{post.account.username}</strong>
+            <strong class="text-lg h-min">
+                {#if post.account.display_name}
+                    {post.account.display_name}
+                {:else}
+                    @{post.account.username}
+                {/if}
+            </strong>
+            {#if post.account.display_name}
+                <span class="ml-2">
+                    @{post.account.username}
+                </span>
+            {/if}
             <span class="inline-block ml-auto" style="opacity: 0.5;">{created}</span>
         </div>
     </div>
