@@ -3,13 +3,23 @@ import { CreatePostDto, GetPostDto } from '../models/posts.dto';
 import { v4 as uuidv4 } from "uuid"
 import { accounts } from './accounts.service';
 
-export let posts: GetPostDto[] = [{
-  text: "Hello World!",
-  sensitive: false,
-  uuid: uuidv4(),
-  created: new Date(),
-  account: accounts[1]
-}]
+export let posts: GetPostDto[] = [
+    {
+    text: "Hello World!",
+    sensitive: false,
+    uuid: uuidv4(),
+    created: new Date(),
+    account: accounts[1]
+  },
+  {
+    text: "Oh so we're adding posts now?",
+    sensitive: true,
+    spoiler_text: "Grumpy complaints",
+    uuid: uuidv4(),
+    created: new Date(),
+    account: accounts[0]
+  }
+]
 
 @Injectable()
 export class PostsService {
