@@ -7,9 +7,16 @@
 		AppShell,
 		initializeStores,
 		Drawer,
-		getDrawerStore
+		getDrawerStore,
+		Toast
+
 	} from "@skeletonlabs/skeleton"
 	import CreatePost from "$lib/post/CreatePost.svelte"
+	import accounts from "$lib/stores/accounts"
+	import type { LayoutData } from "./$types"
+
+	export let data: LayoutData
+	accounts.set(data.accounts)
 
 	initializeStores()
 	const drawerStore = getDrawerStore()
@@ -19,10 +26,11 @@
 	}
 </script>
 
+<Toast />
 <Drawer>
 	<Navigation />
 </Drawer>
-<AppShell slotHeader="lg:hidden" slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64 card rounded-none" slotSidebarRight="hidden xl:flex flex-col w-2/5 p-6">
+<AppShell slotHeader="lg:hidden" slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64 card rounded-none" slotSidebarRight="hidden xl:flex flex-col w-2/5 p-6 pl-0">
 	<svelte:fragment slot="header">
 		<AppBar class="card rounded-none">
 			<svelte:fragment slot="lead">
@@ -52,7 +60,7 @@
 	<!-- page header -->
 
 	<!-- Router Slot -->
-	<div class="flex flex-col p-5 lg:pr-0">
+	<div class="flex flex-col p-6">
 		<slot />
 	</div>
 	<!-- ---- / ---- -->
